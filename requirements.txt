@@ -1,0 +1,4 @@
+pyodbc
+flask
+mysql.connector
+pymysql

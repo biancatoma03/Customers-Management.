@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Update Customer</title>
+       <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        header{
+                background: #00893d;
+                padding: 15px 40px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                color: white;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+                
+            }
+
+            header h2{
+                margin: 0;
+                font-size: 1.5rem;
+                letter-spacing: 0.5px;
+            }
+
+            .header-link {
+                color: white;
+                text-decoration: none;
+                transition: color 0.3s, text-shadow 0.3s; 
+            }
+
+            .header-link:hover{
+                color: #ffffff;
+                text-shadow: 0 0 6px rgba(128, 265,191, 0.6);
+            }
+
+        .container{
+            max-width: 600px;
+            margin: 80px auto;
+            background: linear-gradient(145 deg, #ffffff, #e6e9ef);
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 12px 25px rgba(0,0,0,0.18);
+            padding: 40px 60px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .container:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 35px #00893d;
+        }
+        h1{
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        label{
+            display: block;
+            font-weight: bold;
+            margin-bottom: 6px;
+            color: #34495e;
+        }
+        input[type="text"]{
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            transition: border 0.2s;
+        }
+        input[type="text"]:focus{
+            border-color: #00893d;
+            outline: none;
+        }
+        .actions{
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        button, a.btn{
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.2s;
+            color: rgb(255, 255, 255);
+            font-size: 1rem;
+        }
+        button.btn-update{
+            background-color: #00893d;
+        }
+        a.btn-cancel{
+            background-color: #00893d;
+        }
+
+
+        footer{
+                background: #222423;
+                color: #ccc;
+                text-align: center;
+                padding: 20px 10px;
+                font-size: 0.9rem;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+            }
+
+            footer a{
+                color: #00893d;
+                text-decoration: none;
+                margin: 0 10px;
+            }
+
+            footer a:hover{
+                text-decoration: underline;
+            }
+             .logo{
+                height:28px;
+                width: auto;
+            }
+
+
+        @media (max-width: 480px){
+            .actions {
+                flex-direction: column;
+            }
+            button, a.btn{
+                width: 100%;
+            }
+        }
+
+       </style>
+    </head>
+    <body>
+         <header>
+            <h2>
+            <a href="{{url_for('welcome')}}" class = "header-link">Customer Management System</a>
+        </h2>
+        <img src="{{ url_for('static', filename='logoo.png') }}" alt="Schaeffler Logo" class = "logo">
+        </header>
+
+    <div class = "container">
+        <h1>Update Customer</h1>
+        <div class="mb-3">
+            <label class = "form-label">Last Name</label>
+            <input type = "text" name="LastName" class = "form-control" value = "{{customer.LastName}}" required>
+        </div>
+         <div class="mb-3">
+            <label class = "form-label">First Name</label>
+            <input type = "text" name="FirstName" class = "form-control" value = "{{customer.FirstName}}" required>
+        </div>
+         <div class="mb-3">
+            <label class = "form-label">Address</label>
+            <input type = "text" name="Address" class = "form-control" value = "{{customer.Address}}" required>
+        </div>
+         <div class="mb-3">
+            <label class = "form-label">City</label>
+            <input type = "text" name="City" class = "form-control" value = "{{customer.City}}" required>
+        </div>
+        <div class = "actions">
+        <button type = "submit" class = "btn btn-update">Update</button>
+        <a href = "/index" class = "btn btn-cancel">Cancel</a>
+        </div> 
+        </div>  
+                <footer>
+            &copy;{{current_year}} Customer Management System |
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Privacy Policy</a>
+        </footer>
+    </body>
+</html>
