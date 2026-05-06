@@ -1,3 +1,6 @@
+*.html
+*.css
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -73,5 +76,3 @@ env/
 # Windows system files
 Thumbs.db
 desktop.ini
-*.html
-*.css
